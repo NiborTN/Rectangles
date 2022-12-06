@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_boxes/views/Rect4.dart';
-import 'package:the_boxes/views/Rect400.dart';
-import 'package:the_boxes/views/Rect42.dart';
-import 'package:the_boxes/views/rect40.dart';
+import 'Views/rectangle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,14 +19,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
