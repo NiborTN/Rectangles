@@ -1,11 +1,11 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:the_boxes/view/Rect4.dart';
-import 'package:the_boxes/view/Rect400.dart';
-import 'package:the_boxes/view/rect40.dart';
+import 'package:the_boxesv3/features/rectangles/presentation/pages/rectangle_image_home.dart';
+import 'injection_container.dart' as di;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
+
   runApp(const MyApp());
 }
 
@@ -14,64 +14,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Rectangles',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Rectangle Home'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Rect4()),
-                );
-              },
-              child: const Text('4 Rectangles'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Rect40()),
-                );
-              },
-              child: const Text('40 Rectangles'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Rect400()),
-                );
-              },
-              child: const Text('400 Rectangles'),
-            ),
-          ],
-        ),
-      ),
-    );
+    return const MaterialApp(title: 'Material App', home: RectangleImageHome());
   }
 }
